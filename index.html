@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test stagiaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Galerie d'image</h1>
+
+    <section>
+        <ul>
+            <li class="active">Tout</li>
+            <li>Anime</li>
+            <li>Livre</li>
+            <li>Ordinateur</li>
+        </ul>
+
+        <div class="all-image">
+            <img src="img/naruto.jpeg" data-filtre="anime">
+            <img src="img/nourriture1.jpg" data-filtre="nourriture">
+            <img src="img/ordi1.jpg" data-filtre="ordinateur">
+            <img src="img/R (1).jpeg" data-filtre="anime">
+            <img src="img/OIP (2).jpeg" data-filtre="anime">
+            <img src="img/OIP3.jpeg" data-filtre="anime">
+            <img src="img/ordi2.jpg"  data-filtre="ordinateur">
+            <img src="img/livre2.jpg" data-filtre="livre">
+            <img src="img/R (2).jpeg" data-filtre="anime">
+            <img src="img/livre1.jpg" data-filtre="livre">
+            <img src="img/livre4.jpg" data-filtre="livre">
+            <img src="img/livre3.jpg" data-filtre="livre">
+        </div>
+    </section>
+<script>
+    const liItem = document.querySelectorAll('ul li');
+    const imgItem = document.querySelectorAll('.all-image img');
+    
+    liItem.forEach(li => {
+        li.onclick = function(){
+            // active
+            liItem.forEach(li => {
+                li.className = "";
+            })
+            li.className = "active";
+
+        // filtre
+        
+        const value = li.textContent
+        imgItem.forEach(img => {
+            img.style.display = 'none';
+            if(img.getAttribute('data-filtre') == value.toLowerCase()){
+                img.style.display = 'block';
+            }
+        })
+        }
+
+    });
+</script>
+</body>
+</html>

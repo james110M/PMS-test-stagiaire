@@ -1,0 +1,55 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section  ul {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgb(75, 75, 255);
+    padding-bottom: 10px;
+}
+
+section  ul li{
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    background-color:rgb(75, 75, 255);
+    padding: 5px 10px;
+    margin: 0 10px;
+    color:#ffffff;
+
+}
+
+ul li.active{
+    background-color: green;
+}
+
+.all-image{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.all-image img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    transform: scale(0.5);
+
+}
+
+.all-image img:hover{
+    transform: scale(1);
+}
+
+@media screen and (width:648px) {
+    .all-image img{
+        width: 100px;
+        height: 100px;
+    }
+}
